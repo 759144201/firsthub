@@ -126,14 +126,21 @@ int main() {
 	cout << "* can quote the data of address, *p = " << *p << endl;
 	cout << "the size of all point types is 4 byte" << sizeof(char *) << sizeof(float *) << sizeof(double *) << endl;
 
+	/*
+	*指针与常量
+	*参考：cnblogs.com/beanmoon/archive/2012/09/23/2698987.html
+	*/
+	int const ca = 10;
+	const int a = 10;//常量两种表达方式
 	int p_a = 10;
 	int p_b = 10;
 	//const修饰的是指针，指针指向可以改，指针指向的值不可以更改
 	const int * p1 = &p_a;
+	int const *p3 = &p_a;//指针指向 整型常量 的两种表达方式
 	p1 = &p_b; //正确
 	//*p1 = 100; 报错
 	//const修饰的是常量，指针指向不可以改，指针指向的值可以更改
-	int * const p2 = &p_a;
+	int * const p2 = &p_a;//常量指针 指向整型
 	//p2 = &p_b; //错误
 	*p2 = 100; //正确
 	//const既修饰指针又修饰常量
